@@ -27,7 +27,7 @@ public class FirebaseConfig {
 
                 FirebaseOptions options = FirebaseOptions.builder()
                         .setCredentials(GoogleCredentials.fromStream(serviceAccount))
-                        .setDatabaseUrl("https://rajarata-digital-bank-default-rtdb.firebaseio.com")
+                        .setDatabaseUrl("https://rajarata-digital-bank-default-rtdb.asia-southeast1.firebasedatabase.app")
                         .build();
 
                 FirebaseApp.initializeApp(options);

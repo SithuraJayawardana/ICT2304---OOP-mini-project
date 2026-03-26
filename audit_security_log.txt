@@ -1,1 +1,6 @@
 [2026-03-26T15:11:46.545292200] FAILED_LOGIN: Invalid local password attempt for email: amal@example.com
+[2026-03-26T16:03:56.944921900] FAILED_LOGIN: Login attempt for non-existent email or Firebase error: amal@example.com
+[2026-03-26T16:04:02.908118] FAILED_LOGIN: Login attempt for non-existent email or Firebase error: amal@example.com
+[2026-03-26T16:05:06.037836700] FAILED_LOGIN: Login attempt for non-existent email or Firebase error: amal@example.com
+[2026-03-26T16:11:34.781281800] FAILED_LOGIN: Login attempt for non-existent email or Firebase error: amal@example.com
+[2026-03-26T17:01:09.417216] UNAUTHORIZED_ACCESS: User amal@example.com attempted access without Administrator privileges.

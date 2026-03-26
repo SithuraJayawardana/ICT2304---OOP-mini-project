@@ -105,6 +105,7 @@ public class CardsView {
             }
             
             SessionManager.getInstance().getProfile().addAccount(newAcc);
+            com.rajaratabank.services.AccountService.saveAccount(newAcc);
             renderCards(); // Immediately refresh the view bounds showing the latest OOP state metrics
             
             javafx.scene.control.Alert alert = new javafx.scene.control.Alert(javafx.scene.control.Alert.AlertType.INFORMATION);

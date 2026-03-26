@@ -69,12 +69,27 @@ public class LoginView {
             Customer customer = new Customer("C001", "Amal Perera", email, "0771234567", password);
             CustomerProfile profile = new CustomerProfile(customer);
             
-            // Demonstrating Phase 3 OOP Composition: Adding multiple accounts to one profile
-            profile.addAccount(new SavingsAccount("ACC-001", customer.getId(), 5000.0, "LKR"));
-            profile.addAccount(new com.rajaratabank.models.accounts.CheckingAccount("ACC-002", customer.getId(), 15500.0, "USD", 1000.0));
-            
-            SessionManager.getInstance().startSession(customer, profile);
-            BankUI.loadDashboard();
+            // Connect to Firebase and fetch associated accounts dynamically
+            com.rajaratabank.services.AccountService.getAccountsForUser(customer.getId()).thenAccept(userAccounts -> {
+                if (userAccounts.isEmpty()) {
+                    // Seed standard initial accounts for clean environments
+                    com.rajaratabank.models.BankAccount defAcc1 = new SavingsAccount("ACC-001", customer.getId(), 5000.0, "LKR");
+                    com.rajaratabank.models.BankAccount defAcc2 = new com.rajaratabank.models.accounts.CheckingAccount("ACC-002", customer.getId(), 15500.0, "USD", 1000.0);
+                    profile.addAccount(defAcc1);
+                    profile.addAccount(defAcc2);
+                    com.rajaratabank.services.AccountService.saveAccount(defAcc1);
+                    com.rajaratabank.services.AccountService.saveAccount(defAcc2);
+                } else {
+                    for (com.rajaratabank.models.BankAccount acc : userAccounts) {
+                        profile.addAccount(acc);
+                    }
+                }
+                
+                javafx.application.Platform.runLater(() -> {
+                    SessionManager.getInstance().startSession(customer, profile);
+                    BankUI.loadDashboard();
+                });
+            });
             
         } catch (com.rajaratabank.exceptions.InvalidLoginException ex) {
             Alert alert = new Alert(Alert.AlertType.ERROR);

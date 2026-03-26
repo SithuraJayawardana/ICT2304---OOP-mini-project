@@ -25,6 +25,13 @@ public class BankUI extends Application {
 
     @Override
     public void start(Stage primaryStage) {
+        try {
+            com.rajaratabank.config.FirebaseConfig.initialize();
+            System.out.println("Firebase Runtime Configuration Booted Successfully.");
+        } catch (Exception e) {
+            System.err.println("Firebase Initialization Deferred: Running Local Sandbox Simulator (" + e.getMessage() + ")");
+        }
+
         primaryStage.setTitle("Rajarata Digital Bank");
 
         LoginView login = new LoginView();
@@ -85,7 +92,19 @@ public class BankUI extends Application {
         btnNotifications.setOnAction(e -> switchView(new com.rajaratabank.ui.views.NotificationsView().getView()));
 
         Button btnAdmin = createSidebarButton("Admin Dashboard");
-        btnAdmin.setOnAction(e -> switchView(new com.rajaratabank.ui.views.AdminDashboardView().getView()));
+        btnAdmin.setOnAction(e -> {
+            try {
+                com.rajaratabank.security.AuthManager auth = new com.rajaratabank.security.AuthManager();
+                auth.authorize(SessionManager.getInstance().getActiveUser(), com.rajaratabank.models.Administrator.class);
+                switchView(new com.rajaratabank.ui.views.AdminDashboardView().getView());
+            } catch (com.rajaratabank.exceptions.UnauthorizedAccessException ex) {
+                Alert alert = new Alert(Alert.AlertType.ERROR);
+                alert.setTitle("Strict Access Denied");
+                alert.setHeaderText("Unauthorized View Detected");
+                alert.setContentText(ex.getMessage() + "\n\nThis security breach has been permanently recorded in the audit_security_log.txt file.");
+                alert.showAndWait();
+            }
+        });
 
         VBox spacer = new VBox();
         VBox.setVgrow(spacer, Priority.ALWAYS);

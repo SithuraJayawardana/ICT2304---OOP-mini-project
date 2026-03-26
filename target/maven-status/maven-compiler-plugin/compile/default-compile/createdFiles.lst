@@ -1,6 +1,8 @@
 com\rajaratabank\models\Transaction.class
+com\rajaratabank\services\AccountService.class
 com\rajaratabank\services\LoanManager.class
 com\rajaratabank\services\AdminDashboard.class
+com\rajaratabank\TestSync.class
 com\rajaratabank\models\BankStaff.class
 com\rajaratabank\models\User.class
 com\rajaratabank\security\AuthManager.class
@@ -35,5 +37,6 @@ com\rajaratabank\services\AlertSystem.class
 com\rajaratabank\ui\views\NotificationsView.class
 com\rajaratabank\ui\views\TransferView$1.class
 com\rajaratabank\exceptions\InvalidLoginException.class
+com\rajaratabank\services\AccountService$1.class
 com\rajaratabank\models\Administrator.class
 com\rajaratabank\ui\views\AdminDashboardView.class
