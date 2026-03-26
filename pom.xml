@@ -47,6 +47,63 @@
                     <mainClass>com.rajaratabank.ui.BankUI</mainClass>
                 </configuration>
             </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-shade-plugin</artifactId>
+                <version>3.2.4</version>
+                <executions>
+                    <execution>
+                        <phase>package</phase>
+                        <goals><goal>shade</goal></goals>
+                        <configuration>
+                            <shadedArtifactAttached>false</shadedArtifactAttached>
+                            <outputFile>target/${project.artifactId}-shaded.jar</outputFile>
+                            <transformers>
+                                <transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
+                                    <mainClass>com.rajaratabank.Main</mainClass>
+                                </transformer>
+                            </transformers>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>com.akathist.maven.plugins.launch4j</groupId>
+                <artifactId>launch4j-maven-plugin</artifactId>
+                <version>2.4.1</version>
+                <executions>
+                    <execution>
+                        <id>l4j-clui</id>
+                        <phase>package</phase>
+                        <goals><goal>launch4j</goal></goals>
+                        <configuration>
+                            <headerType>gui</headerType>
+                            <jar>target/${project.artifactId}-shaded.jar</jar>
+                            <outfile>target/RajarataDigitalBank.exe</outfile>
+                            <downloadUrl>https://java.com/download</downloadUrl>
+                            <classPath>
+                                <mainClass>com.rajaratabank.Main</mainClass>
+                            </classPath>
+                            <jre>
+                                <path>%JAVA_HOME%;%PATH%</path>
+                                <minVersion>11</minVersion>
+                                <jdkPreference>preferJre</jdkPreference>
+                            </jre>
+                            <versionInfo>
+                                <fileVersion>1.0.0.0</fileVersion>
+                                <txtFileVersion>1.0</txtFileVersion>
+                                <fileDescription>Rajarata Digital Bank Core</fileDescription>
+                                <copyright>2026</copyright>
+                                <productVersion>1.0.0.0</productVersion>
+                                <txtProductVersion>1.0</txtProductVersion>
+                                <productName>Rajarata Bank Application</productName>
+                                <internalName>BankApp</internalName>
+                                <originalFilename>RajarataDigitalBank.exe</originalFilename>
+                            </versionInfo>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
         </plugins>
     </build>
 </project>
