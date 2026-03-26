@@ -1,0 +1,164 @@
+﻿.\maven\apache-maven-3.
+9.6\bin\mvn.cmd : 
+WARNING: A restricted 
+method in 
+java.lang.System has 
+been called
+At line:1 char:1
++ .\maven\apache-maven-
+3.9.6\bin\mvn.cmd org.c
+odehaus.mojo:exec-maven
+-p ...
++ ~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~
+~~
+    + CategoryInfo     
+         : NotSpecifi  
+  ed: (WARNING: A re   
+ st...has been call    
+ed:String) [], Rem    
+oteException
+    + FullyQualifiedEr 
+   rorId : NativeComm  
+  andError
+ 
+WARNING: 
+java.lang.System::load 
+has been called by org.
+fusesource.jansi.intern
+al.JansiLoader in an 
+unnamed module (file:/C
+:/Users/sithu/.gemini/a
+ntigravity/scratch/raja
+rata-digital-bank/maven
+/apache-maven-3.9.6/lib
+/jansi-2.4.0.jar)
+WARNING: Use --enable-n
+ative-access=ALL-UNNAME
+D to avoid a warning 
+for callers in this 
+module
+WARNING: Restricted 
+methods will be 
+blocked in a future 
+release unless native 
+access is enabled
+
+WARNING: A terminally 
+deprecated method in 
+sun.misc.Unsafe has 
+been called
+WARNING: sun.misc.Unsaf
+e::objectFieldOffset 
+has been called by com.
+google.common.util.conc
+urrent.AbstractFuture$U
+nsafeAtomicHelper (file
+:/C:/Users/sithu/.gemin
+i/antigravity/scratch/r
+ajarata-digital-bank/ma
+ven/apache-maven-3.9.6/
+lib/guava-32.0.1-jre.ja
+r)
+WARNING: Please 
+consider reporting 
+this to the 
+maintainers of class co
+m.google.common.util.co
+ncurrent.AbstractFuture
+$UnsafeAtomicHelper
+WARNING: sun.misc.Unsaf
+e::objectFieldOffset 
+will be removed in a 
+future release
+[INFO] Scanning for projects...
+Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/mojo/exec-maven-plugin/3.1.0/exec-maven-plugin-3.1.0.pom
+Progress (1): 1.1 kB
+Progress (1): 3.0 kB
+Progress (1): 6.3 kB
+Progress (1): 9.6 kB
+Progress (1): 11 kB 
+Progress (1): 14 kB
+                   
+Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/mojo/exec-maven-plugin/3.1.0/exec-maven-plugin-3.1.0.pom (14 kB at 14 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/mojo/mojo-parent/69/mojo-parent-69.pom
+Progress (1): 715 B
+Progress (1): 1.7 kB
+Progress (1): 5.2 kB
+Progress (1): 7.5 kB
+Progress (1): 9.0 kB
+Progress (1): 11 kB 
+Progress (1): 16 kB
+Progress (1): 19 kB
+Progress (1): 23 kB
+Progress (1): 26 kB
+Progress (1): 28 kB
+Progress (1): 32 kB
+Progress (1): 35 kB
+                   
+Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/mojo/mojo-parent/69/mojo-parent-69.pom (35 kB at 132 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/junit/junit-bom/5.8.2/junit-bom-5.8.2.pom
+Progress (1): 907 B
+Progress (1): 2.3 kB
+Progress (1): 5.6 kB
+                    
+Downloaded from central: https://repo.maven.apache.org/maven2/org/junit/junit-bom/5.8.2/junit-bom-5.8.2.pom (5.6 kB at 38 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/mojo/exec-maven-plugin/3.1.0/exec-maven-plugin-3.1.0.jar
+Progress (1): 0.9/73 kB
+Progress (1): 2.3/73 kB
+Progress (1): 3.6/73 kB
+Progress (1): 5.0/73 kB
+Progress (1): 6.4/73 kB
+Progress (1): 7.7/73 kB
+Progress (1): 9.1/73 kB
+Progress (1): 10/73 kB 
+Progress (1): 12/73 kB
+Progress (1): 13/73 kB
+Progress (1): 15/73 kB
+Progress (1): 16/73 kB
+Progress (1): 17/73 kB
+Progress (1): 19/73 kB
+Progress (1): 20/73 kB
+Progress (1): 21/73 kB
+Progress (1): 23/73 kB
+Progress (1): 24/73 kB
+Progress (1): 25/73 kB
+Progress (1): 26/73 kB
+Progress (1): 27/73 kB
+Progress (1): 29/73 kB
+Progress (1): 30/73 kB
+Progress (1): 31/73 kB
+Progress (1): 33/73 kB
+Progress (1): 34/73 kB
+Progress (1): 36/73 kB
+Progress (1): 37/73 kB
+Progress (1): 41/73 kB
+Progress (1): 45/73 kB
+Progress (1): 50/73 kB
+Progress (1): 54/73 kB
+Progress (1): 58/73 kB
+Progress (1): 62/73 kB
+Progress (1): 66/73 kB
+Progress (1): 71/73 kB
+Progress (1): 73 kB   
+                   
+Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/mojo/exec-maven-plugin/3.1.0/exec-maven-plugin-3.1.0.jar (73 kB at 187 kB/s)
+[INFO] 
+[INFO] ---------------< com.rajaratabank:rajarata-digital-bank >---------------
+[INFO] Building rajarata-digital-bank 1.0-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  2.321 s
+[INFO] Finished at: 2026-03-26T13:56:46+05:30
+[INFO] ------------------------------------------------------------------------
+[ERROR] Unknown lifecycle phase ".mainClass=com.rajaratabank.Main". You must specify a valid lifecycle phase or a goal in the format <plugin-prefix>:<goal> or <plugin-group-id>:<plugin-artifact-id>[:<plugin-version>]:<goal>. Available lifecycle phases are: pre-clean, clean, post-clean, validate, initialize, generate-sources, process-sources, generate-resources, process-resources, compile, process-classes, generate-test-sources, process-test-sources, generate-test-resources, process-test-resources, test-compile, process-test-classes, test, prepare-package, package, pre-integration-test, integration-test, post-integration-test, verify, install, deploy, pre-site, site, post-site, site-deploy. -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/LifecyclePhaseNotFoundException
